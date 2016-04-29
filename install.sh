@@ -2,6 +2,9 @@ zenity --info \
 --title "Bienvenue" \
 --text "Ce script est concu pour vous faciliter la tâche lors de l'instalation de votre imprimante Epson pour ubuntu 16.04 (et derivés)"
 
+
+VERSION=$(uname -i);
+
 sudo apt-get install printer-driver-escpr 
 cd Epson-master
 
@@ -9,24 +12,14 @@ ERSION=$(uname -i);
 #boite de dialogue 
 zenity --question \
 --title "votre imprimante est elle l'une de celle listé ci dessous ?" \
---text " WorkForce 60
-WorkForce 625
-WorkForce 630
-WorkForce 633
-WorkForce 635
-WorkForce T42WD
-Epson Stylus NX625
-Epson Stylus SX525WD
-Epson Stylus SX620FW
-Epson Stylus TX560WD
-Epson Stylus Office B42WD
-Epson Stylus Office BX525WD
-Epson Stylus Office BX625FWD
-Epson Stylus Office TX620FWD
-Epson ME OFFICE 82WD
-Epson ME OFFICE 85ND
-Epson ME OFFICE 900WD
-Epson ME OFFICE 960FWD"
+--text " WorkForce 60  WorkForce 625  WorkForce 630  WorkForce 633  
+WorkForce 635  WorkForce T42WD
+
+Epson Stylus NX625 Epson Stylus SX525WD Epson Stylus SX620FW 
+Epson Stylus TX560WD Epson Stylus Office B42WD Epson Stylus Office BX525WD
+Epson Stylus Office BX625FWD Epson Stylus Office TX620FWD
+
+Epson ME OFFICE 82WD Epson ME OFFICE 85ND Epson ME OFFICE 900WD Epson ME OFFICE 960FWD"
 if [ $? = 0 ]
 then
 if [ $VERSION = "x86_64" ] ; then 
@@ -37,7 +30,6 @@ fi;
 else 	
 
 
-VERSION=$(uname -i);
 
 if [ $VERSION = "x86_64" ] ; then 
    sudo dpkg -i epson-prnter-utility-64.deb
