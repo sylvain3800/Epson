@@ -2,7 +2,7 @@ zenity --info \
 --title "Bienvenue" \
 --text "Ce script est concu pour vous faciliter la tâche lors de l'instalation de votre imprimante Epson pour ubuntu 16.04 (et derivés)"
 
-
+sudo apt-get install printer-driver-escpr 
 cd Epson-master
 
 
