@@ -5,8 +5,8 @@ epson modifie ses pilotes au télechargement.
 
 Ce script n'est utile que pour les possesseurs d'ubuntu 16.04 et dérivés.
 
-pour lancer le script , décompressez l'archive , rendez vous dans dans le dossier Epson-master ainsi crée.
-lancez le script avec les droits roots à la'aide de cette commande :  
+Pour lancer le script , décompressez l'archive , rendez vous dans dans le dossier Epson-master ainsi crée et
+lancez le script avec les droits roots à l'aide de cette commande :  
 
 sudo ./install.sh
 
