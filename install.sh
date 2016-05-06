@@ -1,18 +1,28 @@
 zenity --info \
 --title "Bienvenue" \
---text "Ce script est concu pour vous faciliter la tâche lors de l'instalation de votre imprimante Epson pour ubuntu 16.04 (et derivés)"
+--text "Ce script est concu pour vous faciliter la tâche lors de l'installation de votre imprimante Epson pour ubuntu 16.04 (et derivés)"
 
 
 VERSION=$(uname -i);
+# installation pilote generique dépots
+sudo apt-get install printer-driver-escpr
 
-sudo apt-get install printer-driver-escpr 
-cd Epson-master
+# créations de liens symboliques dans /lib 
+cd /lib
+sudo ln -sf ld-linux.so.2 /lib/ld-lsb.so.3
+sudo ln -sf ld-linux.so.2 /lib/ld-lsb.so.2
+sudo ln -sf ld-linux.so.2 /lib/ld-lsb.so.1
+sudo ln -s /lib/x86_64-linux-gnu/ld-2.23.so /lib64/ld-lsb-x86-64.so.3
+sudo ln -s /lib/x86_64-linux-gnu/ld-2.23.so /lib64/ld-lsb-x86-64.so.2
 
-ERSION=$(uname -i);
+# déplacement dans /Epson-master et lancement gui
+cd ~/Epson-master
+
+VERSION=$(uname -i);
 #boite de dialogue 
 zenity --question \
---title "votre imprimante est elle l'une de celle listé ci dessous ?" \
---text " WorkForce 60  WorkForce 625  WorkForce 630  WorkForce 633  
+--title "Votre imprimante est elle l'une de celle listé ci dessous ?" \
+--text "WorkForce 60  WorkForce 625  WorkForce 630  WorkForce 633  
 WorkForce 635  WorkForce T42WD
 
 Epson Stylus NX625 Epson Stylus SX525WD Epson Stylus SX620FW 
@@ -42,10 +52,10 @@ fi;
 
 #boite de dialogue 
 zenity --question \
---title "instalation pilote pc-fax ?" \
---text " votre imprimmante possede elle une option pour envoyer des fax ?
+--title "Instalation pilote pc-fax ?" \
+--text "Votre imprimmante possède elle une option pour envoyer des fax ?
 
-si vous n'êtes pas sur ou ne savez pas alors cliquez sur non "
+Si vous n'êtes pas sur ou ne savez pas alors cliquez sur non "
 if [ $? = 0 ]
 then
 if [ $VERSION = "x86_64" ] ; then 
@@ -59,8 +69,8 @@ fi;
 
 #boite de dialogue 
 zenity --question \
---title "instalation pilote scanner ?" \
---text "votre imprimante dispose-elle d'une fonction scanner ?"
+--title "Instalation pilote scanner ?" \
+--text "Votre imprimante dispose-elle d'une fonction scanner ?"
 if [ $? = 0 ]
 then
 
@@ -73,8 +83,8 @@ tar -xvf iscan-bundle-1.0.0.x64.deb.tar.gz
 cd iscan-bundle-1.0.0.x64.deb/
 sudo ./install.sh
 
-zenity --info --text "les pilotes de votre imprimante et de votre scanner doivent être operationnel !!!! 
-il ne vous reste plus qu'a les tester "
+zenity --info --text "Les pilotes de votre imprimante et de votre scanner doivent être operationnel !!!! 
+Il ne vous reste plus qu'a les tester "
 exit 0
 else
  tar -xvf iscan-bundle-1.0.0.x86.deb.tar.gz 
@@ -82,13 +92,13 @@ else
  sudo ./install.sh
 
   
-zenity --info --text "les pilotes de votre imprimante et de votre scanner doivent être operationnel !!!! 
-il ne vous reste plus qu'a les tester "
+zenity --info --text "Les pilotes de votre imprimante et de votre scanner doivent être operationnel !!!! 
+Il ne vous reste plus qu'a les tester "
 exit 0  
 fi
 
 else
-zenity --info --text "les pilotes de votre imprimante doivent être operationnel !!!! 
-il ne vous reste plus qu'a les tester "
+zenity --info --text "Les pilotes de votre imprimante doivent être operationnel !!!! 
+Il ne vous reste plus qu'a les tester "
 exit 0
 fi
