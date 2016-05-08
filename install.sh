@@ -94,5 +94,6 @@ fi
 
 fi
 
+xterm -e ~/Epson-master/postinstall.sh
 exit 0
 
