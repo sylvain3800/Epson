@@ -64,6 +64,6 @@ En appuyant sur ok , une fenetre va s'ouvrir contenant des informations utiles p
 veuillez copier l'ensemble des infos se trouvant dans la fenêtre et les coller dans votre message de demande d'aide sur le forum ubuntu.fr .
 
 Cela permettra à la communauté de vous venir en aide efficacement "
- xdg-open aidezmoi.txt
+gedit aidezmoi.txt
  fi
 exit 0

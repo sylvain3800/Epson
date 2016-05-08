@@ -6,7 +6,7 @@ zenity --info \
 VERSION=$(uname -i);
 # installation pilote generique dépots
 sudo apt-get install printer-driver-escpr
-
+sudo apt-get install gedit
 # créations de liens symboliques dans /lib 
 cd /lib
 sudo ln -sf ld-linux.so.2 /lib/ld-lsb.so.3
