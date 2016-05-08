@@ -83,22 +83,20 @@ tar -xvf iscan-bundle-1.0.0.x64.deb.tar.gz
 cd iscan-bundle-1.0.0.x64.deb/
 sudo ./install.sh
 
-zenity --info --text "Les pilotes de votre imprimante et de votre scanner doivent être operationnel !!!! 
-Il ne vous reste plus qu'a les tester "
-exit 0
+
 else
  tar -xvf iscan-bundle-1.0.0.x86.deb.tar.gz 
  cd iscan-bundle-1.0.0.x86.deb/
  sudo ./install.sh
 
   
-zenity --info --text "Les pilotes de votre imprimante et de votre scanner doivent être operationnel !!!! 
-Il ne vous reste plus qu'a les tester "
-exit 0  
 fi
 
-else
-zenity --info --text "Les pilotes de votre imprimante doivent être operationnel !!!! 
-Il ne vous reste plus qu'a les tester "
-exit 0
 fi
+
+
+
+
+sudo su - $USER -c ~/Epson-master/postinstall.sh > lxterm
+exit 0
+
