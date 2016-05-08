@@ -94,9 +94,5 @@ fi
 
 fi
 
-
-
-
-sudo su - $USER -c ~/Epson-master/postinstall.sh > lxterm
 exit 0
 
