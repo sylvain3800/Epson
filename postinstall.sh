@@ -1,18 +1,18 @@
 zenity --info --text "Les pilotes de votre imprimante devrait être operationnel !!!! 
-nous allons les tester .
-assurez vous que votre inprimante est branché et sous tension 
+Il ne reste plus qu'a les tester .
+assurez vous que votre inprimante est branché et sous tension et lancez une impression.
 une fois fait appuyez sur ok"
-lpr ~/Epson-master/Baudelaire.txt
+
 
 #boite de dialogue 
 zenity --question \
 --title "Resultat du test" \
---text "Votre imprimante a elle bien imprimmé la page de test ?
+--text " L'impression a-t-elle reussi?
 
-laissez 5 secondes à votre imprimante avant d'appuyer sur non "
+ "
 if [ $? = 0 ]
 then
-zenity --info --text "Les pilotes de votre imprimante sont operationnel !!!! 
+zenity --info --text "Les pilotes de votre imprimante sont donc operationnel !!!! 
 "
 
 exit 0  
@@ -44,7 +44,6 @@ echo "la commande dpkg -l | grep epson me donne ce resultat : [code]" >>aidezmoi
 
 echo "la commande dpkg -l | grep iscan me donne ce resultat : [code]" >>aidezmoi.txt && dpkg -l | grep iscan >>aidezmoi.txt && echo "[/code]" >>aidezmoi.txt
 
-echo "la commande groups me donne ce résulat : [code]" >> aidezmoi.txt && groups >>aidezmoi.txt && echo "[/code]" >>aidezmoi.txt
 
 echo "la commande dpkg -l | greps cups me donne ce résulat : [code]" >>aidezmoi.txt && dpkg -l | grep cups >>aidezmoi.txt && echo "[/code]" >>aidezmoi.txt
 
