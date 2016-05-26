@@ -94,6 +94,8 @@ fi
 
 fi
 
+sudo /etc/init.d/cups restart 
+
 xterm -e ~/Epson-master/postinstall.sh
 exit 0
 
